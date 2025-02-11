@@ -1,15 +1,31 @@
 {
   "name": "chitogefy",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
+    "start": "node server",
+    "dev": "nodemon server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "RestAPI",
+    "Chitoge",
+    "JavaScript",
+    "SwaggerUI",
+    "Fastify"
+  ],
+  "author": "Suryanjana",
   "license": "MIT",
-  "description": "",
+  "description": "Chitoge Rest API using Fastify and SwaggerUI",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Suryanjana/Chitoge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Suryanjana/Chitoge/issues"
+  },
+  "homepage": "https://github.com/Suryanjana/Chitoge#readme",
   "dependencies": {
     "@fastify/autoload": "^6.0.3",
     "@fastify/rate-limit": "^10.2.1",
