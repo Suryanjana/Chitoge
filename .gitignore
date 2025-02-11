@@ -137,6 +137,9 @@ dist
 
 # Prettier Configuration
 .prettierrc
+<<<<<<< HEAD
 
 # Package lock
 package-lock.json
+=======
+>>>>>>> 5ac7715d48696338dc81702813a1915317e68e5d
