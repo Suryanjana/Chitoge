@@ -1,4 +1,4 @@
-const Config = {
+export const Config = {
     creator: "Natsumi",
     web: "https://chitoge.win",
     message: {
@@ -22,5 +22,3 @@ const Config = {
         email: "rizz@chitoge.win",
     }
 };
-
-module.exports = Config;

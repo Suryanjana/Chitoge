@@ -1,5 +1,5 @@
-module.exports = async function (fastify) {
-    fastify.register(require("@fastify/rate-limit"), {
+export default async function (fastify) {
+    fastify.register(import("@fastify/rate-limit"), {
         max: 100,
         timeWindow: "1 minute",
         errorResponseBuilder: (res) => {
