@@ -1,4 +1,4 @@
-module.exports = async function (fastify, options) {
+export default async function (fastify, options) {
     fastify.addHook("onRequest", (request, reply, done) => {
         const { method, url } = request;
         const ip = request.ip;
@@ -7,4 +7,4 @@ module.exports = async function (fastify, options) {
         request.log.info({ method, url, ip, userAgent }, "Incoming request");
         done();
     });
-};
+}

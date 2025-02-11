@@ -1,4 +1,4 @@
-const os = require("os");
+import os from 'os';
 
 /**
  * @swagger
@@ -40,7 +40,7 @@ const os = require("os");
  *                         description: CPU speed in MHz
  */
 
-module.exports = async (fastify) => {
+export default async (fastify) => {
     fastify.get("/ping", async () => {
         const uptime = os.uptime();
         const totalMemory = os.totalmem();

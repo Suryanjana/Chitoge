@@ -1,17 +1,16 @@
-const swagger = require("@fastify/swagger");
-const { SwaggerTheme, SwaggerThemeNameEnum } = require("swagger-themes");
-const swaggerUi = require("@fastify/swagger-ui");
-const swaggerJsDoc = require("swagger-jsdoc");
-const Config = require("../config");
-const fs = require("fs");
+import swagger from "@fastify/swagger";
+import { SwaggerTheme, SwaggerThemeNameEnum } from "swagger-themes";
+import swaggerUi from "@fastify/swagger-ui";
+import swaggerJsDoc from "swagger-jsdoc";
+import fs from "fs";
+import { Config } from "../config.js";
 
-module.exports = async function (fastify) {
+export default async function (fastify) {
     const theme = new SwaggerTheme();
     const content = theme.getBuffer(SwaggerThemeNameEnum.FEELING_BLUE);
 
-    const faviconPath = 'src/public/favicon.ico';
-    const faviconBuffer = fs.readFileSync(faviconPath);
-    const faviconBase64 = faviconBuffer.toString('base64');
+    const faviconBuffer = fs.readFileSync("public/favicon.ico");
+    const faviconBase64 = faviconBuffer.toString("base64");
 
     const swaggerOptions = {
         definition: {
@@ -32,7 +31,7 @@ module.exports = async function (fastify) {
                 },
             ],
         },
-        apis: ["./src/routes/**/*.js"],
+        apis: ["./routes/**/*.js"],
     };
 
     const swaggerDocs = swaggerJsDoc(swaggerOptions);
@@ -58,9 +57,9 @@ module.exports = async function (fastify) {
                     rel: "icon",
                     sizes: "16x16",
                     type: "image/x-icon",
-                    content: Buffer.from(faviconBase64, 'base64'),
+                    content: Buffer.from(faviconBase64, "base64"),
                 },
             ],
         },
     });
-};
+}
