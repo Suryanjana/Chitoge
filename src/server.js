@@ -4,7 +4,7 @@ const Fastify = require("fastify");
 const autoload = require("@fastify/autoload");
 const fastifyStatic = require("@fastify/static");
 const app = Fastify({
-    logger: {
+    logger: process.env.NODE_ENV === "production" ? true : {
         transport: {
             target: "pino-pretty",
             options: {
@@ -21,7 +21,6 @@ app.register(require("./middlewares/rateLimit"));
 app.register(require("./middlewares/logger"))
 app.register(fastifyStatic, {
     root: path.join(__dirname, "public"),
-    prefix: "/public/",
 });
 
 app.register(autoload, {
