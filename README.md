@@ -53,7 +53,7 @@ To get Chitogefy up and running, ensure you have:
    or using [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/):
 
    ```sh
-   pm2 start server.js
+   pm2 start ecosystem.config.cjs
    pm2 logs API
    ```
 
